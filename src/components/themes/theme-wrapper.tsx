@@ -3,13 +3,13 @@
 import { useConfig } from '@/hooks/use-config'
 import { cn } from '@/lib/utils'
 import { Poppins } from 'next/font/google'
-import { useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 export const ThemeWrapper = ({
   children,
-}: Readonly<{ children: React.ReactNode }>) => {
+}: Readonly<{ children: ReactNode }>) => {
   const [config] = useConfig()
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const ThemeWrapper = ({
       '--radius',
       `${config.radius}rem`,
     )
-  }, [])
+  }, [config.radius])
 
   return (
     <div
