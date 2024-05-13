@@ -1,8 +1,14 @@
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
-const configAtom = atomWithStorage<{ theme: string }>('config', {
-  theme: 'violet',
+type Config = {
+  theme: string
+  radius: number
+}
+
+const configAtom = atomWithStorage<Config>('config', {
+  theme: 'zinc',
+  radius: 0.5,
 })
 
 export const useConfig = () => {
