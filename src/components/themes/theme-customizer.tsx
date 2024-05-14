@@ -7,9 +7,9 @@ import {
 import { useConfig } from '@/hooks/use-config'
 import { cn } from '@/lib/utils'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-import { ThemeWrapper } from './theme-wrapper'
+import { CSSProperties, useEffect, useState } from 'react'
 import { themes } from './themes'
+import { ArrowRightLeft } from 'lucide-react'
 
 export function ThemeCustomizer() {
   const [config, setConfig] = useConfig()
@@ -26,27 +26,33 @@ export function ThemeCustomizer() {
         <Button variant="outline">Customize</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
-        <ThemeWrapper>
-          <h1>Current Theme: {config.theme ? config.theme : 'Zinc'}</h1>
+        <div className="flex flex-row gap-1 justify-between items-center p-2">
+          <div>
+            <h2 className="text-2xl">Customize</h2>
+            <p className="text-accent">Choose a theme that fits your style.</p>
+          </div>
+          <ArrowRightLeft width="20" height="20" />
+        </div>
+        <div className="grid grid-cols-5 gap-2">
           {mounted ? (
             <>
-              {['blue', 'violet', 'orange', 'slate', 'zinc'].map((color) => {
-                const theme = themes.find((theme) => theme.name === color)
-                const isActive = config.theme === color
+              {themes.map((color) => {
+                const theme = themes.find((theme) => theme.name === color.name)
+                const isActive = config.theme === color.name
 
                 if (!theme) return null
 
                 return (
                   <Button
-                    key={color}
+                    key={color.name}
                     variant="outline"
                     style={
                       {
                         '--theme-primary': `hsl(${theme.activeColor[mode === 'dark' ? 'dark' : 'light']})`,
-                      } as React.CSSProperties
+                      } as CSSProperties
                     }
                     className={cn(
-                      'rounded-full border-2 text-xs',
+                      'rounded-b w-full',
                       isActive && 'border-[--theme-primary]',
                     )}
                     onClick={() => {
@@ -64,7 +70,7 @@ export function ThemeCustomizer() {
           ) : (
             <h1>Loading...</h1>
           )}
-        </ThemeWrapper>
+        </div>
       </PopoverContent>
     </Popover>
   )
