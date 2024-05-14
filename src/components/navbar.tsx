@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        'flex flex-row justify-between p-4 bg-transparent border-primary-foreground border-b',
+        'flex flex-row justify-between p-4 bg-transparent border-b-neutral-700 border-2',
       )}
     >
       <div>
