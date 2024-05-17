@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import { Logo } from '@/components/Logo'
+import { NavigationMenuDemo } from '@/components/navigation-menu-demo'
 
 export const Navbar = () => {
   return (
@@ -11,6 +12,7 @@ export const Navbar = () => {
       <div>
         <Logo />
       </div>
+      <NavigationMenuDemo />
       <span>Options</span>
     </header>
   )
