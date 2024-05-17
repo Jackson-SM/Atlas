@@ -1,4 +1,3 @@
-import { ThemeCustomizer } from './themes/theme-customizer'
 import { NavigationMenuDemo } from '@/components/navigation-menu-demo'
 import { cn } from '@/lib/utils'
 import { Logo } from '@/components/Logo'
