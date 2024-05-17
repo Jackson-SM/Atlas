@@ -14,7 +14,7 @@ export const Navbar = () => {
         <Logo />
       </div>
       <NavigationMenuDemo />
-      <ThemeCustomizer />
+      <span>Options</span>
     </header>
   )
 }
