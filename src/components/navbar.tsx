@@ -1,4 +1,3 @@
-import { NavigationMenuDemo } from '@/components/navigation-menu-demo'
 import { cn } from '@/lib/utils'
 import { Logo } from '@/components/Logo'
 
@@ -12,7 +11,6 @@ export const Navbar = () => {
       <div>
         <Logo />
       </div>
-      <NavigationMenuDemo />
       <span>Options</span>
     </header>
   )
