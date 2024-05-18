@@ -1,16 +1,16 @@
 import React from 'react'
 import {
-  NavigationMenuUi,
+  Navigation,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu-ui'
+} from '@/components/ui/navigation'
 
 export const NavigationMenuDemo = () => {
   return (
-    <NavigationMenuUi>
+    <Navigation>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
@@ -25,6 +25,6 @@ export const NavigationMenuDemo = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
-    </NavigationMenuUi>
+    </Navigation>
   )
 }
