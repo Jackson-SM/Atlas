@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
       enableSystem
       storageKey="theme"
     >
-      <ThemeWrapper>
+      <ThemeWrapper defaultTheme="red">
         <Component {...pageProps} />
       </ThemeWrapper>
     </ThemeProvider>
