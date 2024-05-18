@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils'
 import { Logo } from '@/components/Logo'
 import { NavigationMenuDemo } from '@/components/navigation-menu-demo'
 import { BellIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
-import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export const Navbar = () => {
