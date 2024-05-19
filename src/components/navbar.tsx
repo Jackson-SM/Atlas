@@ -1,53 +1,47 @@
-import { cn } from '@/lib/utils'
+import { AvatarDemo } from '@/components/AvatarDemo'
 import { Logo } from '@/components/Logo'
-import { NavigationMenuDemo } from '@/components/navigation-menu-demo'
+import { NavigationMenuDemo } from '@/components/NavigationMenuDemo'
+import { ThemeToggle } from '@/components/themes/ThemeToogle'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { BellIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { ThemeCustomizer } from './themes/theme-customizer'
 
 export const Navbar = () => {
   return (
-    <header
-      className={cn(
-        'flex flex-row justify-between items-center p-4 bg-muted border-b-neutral-700',
-      )}
-    >
+    <header className={cn('flex flex-row justify-between p-4 bg-transparent')}>
       <div>
         <Logo />
       </div>
       <NavigationMenuDemo />
-      <div className="flex flex-row gap-2">
-        <ButtonRounded>
-          <BellIcon width={20} height={20} />
-        </ButtonRounded>
-        <ButtonRounded>
-          <EnvelopeClosedIcon width={20} height={20} />
-        </ButtonRounded>
-        <Avatar>
-          <AvatarImage
-            src="https://avatars.githubusercontent.com/u/86308072?v=4"
-            alt="Jackson-SM"
-          />
-          <AvatarFallback>JS</AvatarFallback>
-        </Avatar>
+
+      <div className="flex flex-row justify-center items-center gap-2">
+        <ButtonIcon>
+          <BellIcon width="16" height="16" />
+        </ButtonIcon>
+        <ButtonIcon>
+          <EnvelopeClosedIcon width="16" height="16" />
+        </ButtonIcon>
+        <ThemeToggle />
+        <ThemeCustomizer />
+        <AvatarDemo src="https://avatars.githubusercontent.com/u/86308072?v=4" />
       </div>
     </header>
   )
 }
 
-export const ButtonRounded = ({
+export const ButtonIcon = ({
   children,
-  className,
   ...props
-}: React.ComponentProps<'button'>) => {
+}: React.ComponentProps<typeof Button>) => {
   return (
-    <button
-      className={cn(
-        'bg-transparent rounded-full w-10 h-10 flex items-center justify-center transition-colors ease-in-out duration-150 hover:bg-accent',
-        className,
-      )}
+    <Button
+      className="flex justify-center items-center bg-transparent"
+      variant="outline"
+      size="icon"
       {...props}
     >
       {children}
-    </button>
+    </Button>
   )
 }
