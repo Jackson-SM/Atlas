@@ -39,7 +39,7 @@ export function ThemeCustomizer() {
                 Choose a theme that fits your style.
               </p>
             </div>
-            <Button variant="secondary">
+            <Button variant="ghost" size="icon">
               <SymbolIcon width="20" height="20" />
             </Button>
           </div>

@@ -10,7 +10,7 @@ export const Logo = () => {
       className={cn('flex flex-row gap-0.5 items-center', quicksand.className)}
     >
       {' '}
-      <SvgLogo height="30" width="30" /> <h1 className="text-2xl">Atlas</h1>{' '}
+      <SvgLogo height="40" width="40" /> <h1 className="text-2xl">Atlas</h1>{' '}
     </div>
   )
 }
