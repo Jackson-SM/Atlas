@@ -35,7 +35,7 @@ export function ThemeCustomizer() {
           <div className="flex flex-row gap-1 justify-between items-center p-2">
             <div>
               <h2 className="text-2xl">Customize</h2>
-              <p className="text-md text-muted-foreground">
+              <p className="text-sm my-2 text-muted-foreground">
                 Choose a theme that fits your style.
               </p>
             </div>
